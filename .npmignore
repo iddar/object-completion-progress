@@ -1,0 +1,5 @@
+# ignore files
+test
+
+#editor settings
+.editorconfig
