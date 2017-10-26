@@ -13,7 +13,7 @@ $ npm i -S object-progress
 Example:
 
 ```js
-const progress = require('../index')
+const progress = require('object-progress')
 
 const fix = 2
 const validItems = ['name', 'email', 'age', 'city']

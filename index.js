@@ -24,5 +24,7 @@ module.exports = function (validateFileds, doc, presicion = 5) {
     (count / validateFileds.length).toFixed(presicion)
   )
 
+  avg = Number.isNaN(avg) ? 0 : avg
+
   return {avg, count}
 }
