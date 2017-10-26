@@ -22,7 +22,7 @@ const validateFileds = [
   'friends'
 ]
 
-const netedFileds = [
+const nestedFileds = [
   'isActive',
   'balance',
   'picture',
@@ -61,18 +61,25 @@ describe('Object completion progress', () => {
 
   describe('Nested object', () => {
     it('Average fix 2', () => {
-      let { avg } = progress(netedFileds, dummyNested, 2)
+      let { avg } = progress(nestedFileds, dummyNested, 2)
       expect(avg).to.be.equal(0.75)
     })
 
     it('Average fix 1', () => {
-      let { avg } = progress(netedFileds, dummyNested, 1)
+      let { avg } = progress(nestedFileds, dummyNested, 1)
       expect(avg).to.be.equal(0.8)
     })
 
     it('Valid Count', () => {
-      let { count } = progress(netedFileds, dummyNested, 1)
+      let { count } = progress(nestedFileds, dummyNested, 1)
       expect(count).to.be.equal(12)
+    })
+  })
+
+  describe('Empty Data', () => {
+    it('Empty fiels', () => {
+      let { count } = progress([], {}, 1)
+      expect(count).to.be.equal(0)
     })
   })
 })
