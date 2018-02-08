@@ -82,4 +82,23 @@ describe('Object completion progress', () => {
       expect(count).to.be.equal(0)
     })
   })
+
+  describe('Return valid and invalid filds', () => {
+    it('Return valid and invalid list', async () => {
+      let { valid, invalid } = progress(validateFileds, dummy, 1)
+      expect(valid.length).to.be.equal(9)
+      expect(invalid.length).to.be.equal(5)
+    })
+
+    it('Return current list', async () => {
+      let { invalid } = progress(validateFileds, dummy, 1)
+      expect(invalid).to.deep.equal([
+        'gender',
+        'company',
+        'phone',
+        'latitude',
+        'longitude'
+      ])
+    })
+  })
 })

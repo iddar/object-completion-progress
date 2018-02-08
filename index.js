@@ -13,11 +13,17 @@ const isBoolean = require('lodash/isBoolean')
  * @return {object}
  */
 module.exports = function (validateFileds, doc, presicion = 5) {
+  let valid = []
+  let invalid = []
+
   let count = validateFileds.reduce(function (sum, el) {
     let item = get(doc, el, undefined)
-    if (isNumber(item)) return sum + 1
-    if (isBoolean(item)) return sum + 1
-    return isEmpty(item) ? sum : sum + 1
+    if (isNumber(item) || isBoolean(item) || !isEmpty(item)) {
+      valid.push(el)
+      return sum + 1
+    }
+    invalid.push(el)
+    return sum
   }, 0)
 
   let avg = parseFloat(
@@ -26,5 +32,5 @@ module.exports = function (validateFileds, doc, presicion = 5) {
 
   avg = Number.isNaN(avg) ? 0 : avg
 
-  return {avg, count}
+  return { avg, count, valid, invalid }
 }

@@ -1,6 +1,6 @@
 {
   "name": "object-progress",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "know the percentage of advance of an object",
   "main": "index.js",
   "engines": {

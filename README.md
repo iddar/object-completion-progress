@@ -24,9 +24,10 @@ const doc = {
   city: ''
 }
 
-let { avg, count } = progress(validItems, doc, fix)
+let { avg, count, invalid } = progress(validItems, doc, fix)
 console.log(avg) // 0.60
 console.log(count) // 3
+console.log(invalid) // [ 'age', 'city' ]
 ```
 
 ### Testing
