@@ -12,7 +12,9 @@
   },
   "scripts": {
     "test": "mocha --reporter spec",
-    "test-watch": "mocha --watch"
+    "test-watch": "mocha --watch",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "keywords": [
     "object",
@@ -27,6 +29,8 @@
     "standard": "^10.0.3"
   },
   "dependencies": {
-    "lodash": "^4.17.11"
-  }
+    "lodash": "^4.17.10",
+    "snyk": "^1.316.1"
+  },
+  "snyk": true
 }
